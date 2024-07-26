@@ -1,0 +1,138 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body
+{
+    color: #fff;
+}
+
+.header
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 30px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 10px; /* Space between logo and text */
+    align-items: left;
+}
+
+.navbar a {
+    display: inline-block;
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+
+.navbar a:hover {
+    color: rgb(245, 182, 81);
+}
+
+.home {
+    position: relative;
+    width: 100%;
+    justify-content: space-between;
+    height: 100vh;
+    background: url("download.gif") no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 70px 10% 0;
+}
+
+.home-content {
+    max-width: 600px;
+}
+
+.home-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.header .logo {
+    color: #d4d862; /* Attractive color */
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.home-content h3:nth-of-type(2) {
+    margin-bottom: 30px;
+}
+
+.home-content h3 span {
+    color: #0ef;
+}
+
+.home-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    margin: -3px 0;
+}
+
+.home-content p {
+    font-size: 20px;
+}
+
+.Home-sci a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid rgba(248, 162, 2, 0.789);
+    border-radius: 50%;
+    font-size: 20px;
+    color: rgb(245, 182, 81);
+    text-decoration: none;
+    margin: 30px 15px 30px 0;
+}
+
+.Home-sci a:hover {
+    background: rgb(245, 182, 81);
+    color: #081b29;
+    box-shadow: 0 0 20px rgb(245, 182, 81);
+}
+
+.btn-box {
+    display: inline-block;
+    padding: 12px 28px;
+    background: rgb(245, 182, 81);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #081b29;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-box:hover {
+    box-shadow: 0 0 4px rgb(245, 182, 81),
+    0 0 10px rgb(29, 49, 49), 0 0 10px rgb(37, 38, 38),
+    0 0 10px rgb(49, 93, 93), 0 0 10px rgb(245, 182, 81);
+}

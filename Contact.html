@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="Contact.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+</head>
+<body>
+    
+    <div class="container">
+        <div class="back-button" onclick="goBack()">
+            <i class="fa-solid fa-angle-left"></i> Back
+        </div>
+        <div id="contact">
+            <h1>Contact</h1>
+            <div id="text">
+                <form id="contact-form">
+                    <label for="name">Name:</label>
+                    <input type="text" placeholder="John" id="name"><br><br>
+                    <label for="phone-no">Phone No:</label>
+                    <input type="tel" placeholder="1234567890" id="phone-no"><br><br>
+                    <label for="email">Email:</label>
+                    <input type="email" placeholder="xyz@gmail.com" id="email"><br><br>
+                    <label for="message">Message:</label>
+                    <textarea name="entry.XXXXXX" rows="5" cols="40" id="message"></textarea><br><br>
+                    <a href="#" class="btn-submit" onclick="saveData()">Submit</a>
+                    <a href="#" class="btn-reset" onclick="resetForm()">Reset</a>
+                </form>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function goBack() {
+            window.location.href = "index.html";
+        }
+
+        function saveData() {
+            const name = document.getElementById('name').value;
+            const phoneNo = document.getElementById('phone-no').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (name && phoneNo && email && message) {
+                // Save data to local storage
+                localStorage.setItem('contactData', JSON.stringify({
+                    name: name,
+                    phoneNo: phoneNo,
+                    email: email,
+                    message: message
+                }));
+
+                alert('Data saved successfully!');
+                
+                // Optionally clear the form after saving
+                resetForm();
+            } else {
+                alert('Please fill in all fields.');
+            }
+        }
+
+        function resetForm() {
+            document.getElementById('contact-form').reset();
+        }
+
+        // Optionally, populate the form with saved data on page load
+        window.onload = function() {
+            const savedData = JSON.parse(localStorage.getItem('contactData'));
+            if (savedData) {
+                document.getElementById('name').value = savedData.name;
+                document.getElementById('phone-no').value = savedData.phoneNo;
+                document.getElementById('email').value = savedData.email;
+                document.getElementById('message').value = savedData.message;
+            }
+        }
+    </script>
+</body>
+</html>
